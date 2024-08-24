@@ -1,14 +1,14 @@
 from urllib.request import urlretrieve
 import os
 
-output_relative_dir = '../data'
+output_relative_dir = '../data/landing'
 
 if not os.path.exists(output_relative_dir):
     os.makedirs(output_relative_dir)
 
 YEARS = ['2022', '2023']
-MONTHS = { '2022': range(11, 13), '2023': range(1, 5) }
-TYPES = ['yellow', 'green', 'fhv', 'fhvhv']
+MONTHS = { '2022': range(11, 13), '2023': range(1, 5)}
+TYPES = ['yellow']
 URL_TEMPLATE = "https://d37ci6vzurychx.cloudfront.net/trip-data/"
 
 for type in TYPES:
