@@ -1,12 +1,3 @@
-data/curated
-data/curated2
-data/curated3
-data/development
-data/landing
-data/landing_taxi_zones
-data/raw
-data/raw_taxi_zones
-
 .DS_Store
 *.parquet
 models/
