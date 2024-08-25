@@ -1,33 +1,78 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Yi0Zbe2y)
-# MAST30034 Project 1 README.md
-- Name: `INSERT YOUR NAME HERE`
-- Student ID: `INSERT YOUR STUDENT ID HERE`
+# MAST30034 Project 1
+- Name: Jenny Mai
+- Student ID: 1538060
 
-## Student Instructions
-You **must** write up `README.md` for this repository to be eligable for readability marks.
+## Project Overview
+This project focuses on analyzing the New York City Yellow Taxi data to generate insights and recommendations specifically for tourists. The analysis includes preprocessing, exploratory data analysis (EDA), and the application of machine learning models to predict taxi fares. The models used in this project include Linear Regression, Lasso Regression, Random Forest, and Gradient Boosted Trees.
 
-1. Students must keep all Jupyter Notebooks in the `notebooks` directory.
-2. Students must keep all `.py` scripts under the `scripts` directory. These can include helper functions and modules with relevant `__init__.py`
-3. Students must store all raw data downloaded (using a Python script) in the `data/raw` folder. This will be in the `.gitignore` so **do not upload any raw data files whatsoever**.
-4. Students must store all curated / transformed data in the `data/curated` folder. This will be in the `.gitignore` so **do not upload any raw data files whatsoever**. We will be running your code from the `scripts` directory to regenerate these.
-5. All plots must be saved in the `plots` directory.
-6. Finally, your report `.tex` files must be inside the `report` directory. If you are using overleaf, you can download the `.zip` and extract it into this folder.
-7. Add your name and Student ID to the fields above.
-8. Add your relevant `requirements.txt` to the root directory. If you are unsure, run `pip3 list --format=freeze > requirements.txt` (or alternative) and copy the output to the repository.
-9. You may delete all `.gitkeep` files if you really want to. These were used to ensure empty directories could be pushed to `git`.
-10. When you have read this, delete the `Student Instructions` section to clean the readme up.
+## Research Goal
+The primary goal of this project is to analyze taxi fare data and develop a model that can predict fare amounts accurately, with a specific focus on providing actionable insights for tourists visiting New York City.
 
-Remember, we will be reading through and running your code, so it is in _your best interest_ to ensure it is readable and efficient.
+## Timeline
+6 months: November 2022 - April 2023
 
-## README example
-This is an example `README.md` for students to use. **Please change this to your requirements**.
+## Project Structure
 
-**Research Goal:** My research goal is tip analysis for credit card payments
+- **notebooks/**
+  - `processing_1.ipynb`: **Data Preprocessing and Standardization Pipeline**  
+    This notebook handles the initial data preprocessing steps for taxi trip data, including schema standardization and merging multiple datasets into a consistent format for further analysis.
+  
+  - `processing_2.ipynb`: **Data Cleaning and Feature Engineering**  
+    This notebook focuses on cleaning the data by handling missing values, removing outliers, and performing feature engineering to create new variables for analysis.
+  
+  - `processing_3.ipynb`: **Spatial Data Integration and Feature Engineering**  
+    This notebook integrates geographic data with taxi trip data, identifies key zones like airports and tourist attractions, and creates features based on spatial information.
+  
+  - `processing_4.ipynb`: **Weather Data Integration and Duplicate Removal**  
+    This notebook merges weather data with taxi trip data, cleans the combined dataset, and removes duplicates to ensure a clean and enriched dataset for analysis.
+  
+  - `eda_postcleaning.ipynb`: **Exploratory Data Analysis and Visualization**  
+    This notebook performs exploratory data analysis (EDA) on the cleaned dataset, visualizing correlations, distributions, temporal patterns, and geospatial data to uncover key insights.
+  
+  - `transformation.ipynb`: **Log Transformation and Data Preparation**  
+    This notebook applies log transformations to skewed features to normalize their distributions and prepares the data for modeling.
+  
+  - `linear_model.ipynb`: **Linear and Lasso Regression Model Development**  
+    This notebook develops and evaluates Linear and Lasso regression models to predict taxi fares, with a focus on feature selection, residuals analysis, and model refinement.
+  
+  - `tree_model.ipynb`: **Random Forest and Gradient Boosting Model Development**  
+    This notebook builds and evaluates Random Forest and Gradient Boosting models for taxi fare prediction, analyzing model performance, residuals, and feature importance.
 
-**Timeline:** The timeline for the research area is 2018 - 2021.
+- **plots/**
+  - This directory contains all the plots generated during the EDA and modeling phases.
 
-To run the pipeline, please visit the `scripts` directory and run the files in order:
-1. `download.py`: This downloads the raw data into the `data/landing` directory.
-2. `preprocess.ipynb`: This notebook details all preprocessing steps and outputs it to the `data/raw` and `data/curated` directory.
-3. `analysis.ipynb`: This notebook is used to conduct analysis on the curated data.
-4. `model.py` and `model_analysis.ipynb`: The script is used to run the model from CLI and the notebook is used for analysing and discussing the model.
+- **report/**
+  - This directory contains the LaTeX files for the final report.
+
+- **scripts/**
+  - Contains any Python scripts used in the data preprocessing and analysis pipeline.
+
+## Requirements
+Ensure you have all necessary Python packages installed by using the `requirements.txt` file provided in the root directory.
+
+## Running the Project
+
+To replicate the analysis and run the models, please follow the steps below in the order specified:
+
+1. **Data Preprocessing**:
+   - Open and run the following notebooks sequentially:
+     1. `processing_1.ipynb`
+     2. `processing_2.ipynb`
+     3. `processing_3.ipynb`
+     4. `processing_4.ipynb`
+   - These notebooks will handle all the necessary data preprocessing steps including cleaning, outlier removal, and feature engineering.
+
+2. **Exploratory Data Analysis (EDA)**:
+   - After preprocessing, proceed with the exploratory data analysis:
+     - `eda_postcleaning.ipynb`
+   - This notebook will help you understand the cleaned dataset through various visualizations.
+
+3. **Data Transformation**:
+   - Next, transform the data to prepare it for modeling:
+     - `transformation.ipynb`
+   - This includes scaling and applying transformations to ensure the data is suitable for the machine learning models.
+
+4. **Modeling**:
+   - Run the following notebooks to build and evaluate predictive models:
+     - `linear_model.ipynb`: Implements Linear and Lasso Regression models.
+     - `tree_model.ipynb`: Implements Random Forest and Gradient Boosted Trees models.
