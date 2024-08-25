@@ -1,4 +1,12 @@
 .DS_Store
 *.parquet
 models/
-data/
+data/curated
+data/curated2
+data/curated3
+data/development
+data/landing
+data/landing_taxi_zones
+data/raw
+data/raw_taxi_zones
+data/external_data/nyc_traffic_raw.csv
