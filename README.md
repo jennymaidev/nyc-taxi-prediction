@@ -68,10 +68,6 @@ The models were evaluated using metrics like RMSE, MAE, and R².
 2. **Avoid High-Density Times on Friday and Saturday Evenings**: Consider alternative transport from 5 PM to 8 PM.
 3. **Utilize Off-Peak Times for Cheaper Rides and Leisure Activities**: Mid-morning hours and early afternoons on weekdays offer lower fares and less congestion.
 
-## Conclusion
-
-This report provides valuable insights into NYC taxi data, helping tourists make informed decisions and optimize their travel experiences. Through data preprocessing and analysis, we identified key factors affecting fares and trip durations, supported by robust modelling to predict fares accurately.
-
 ## References
 
 - National Oceanic and Atmospheric Administration (NOAA), "Climate Data Online". Available at: [NOAA Climate Data](https://www.weather.gov/wrh/Climate?wfo=okx)
