@@ -71,5 +71,4 @@ The models were evaluated using metrics like RMSE, MAE, and R².
 ## References
 
 - National Oceanic and Atmospheric Administration (NOAA), "Climate Data Online". Available at: [NOAA Climate Data](https://www.weather.gov/wrh/Climate?wfo=okx)
-- Scikit-learn, "Scikit-learn: Machine Learning in Python". Available at: [Scikit-learn Documentation](https://scikit-learn.org/stable/documentation.html)
 - New York City Taxi and Limousine Commission, "NYC Taxi and Limousine Service Trip Record Data". Available at: [NYC Taxi Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
