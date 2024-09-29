@@ -1,79 +1,76 @@
-# NYC Taxi Research Project
+# NYC Iconic Yellow Taxi Cost Estimation for Travellers
 
-## Navigating NYC: Taxi Fare Insights & Travel Tips for Tourists
+## Project Overview
+This project focuses on analyzing the New York City Yellow Taxi data to generate insights and recommendations specifically for tourists. The analysis includes preprocessing, exploratory data analysis (EDA), and the application of machine learning models to predict taxi fares. The models used in this project include Linear Regression, Lasso Regression, Random Forest, and Gradient Boosted Trees.
 
-**Author**: Jenny Mai (mtqn0310@gmail.com)
+## Research Goal
+The primary goal of this project is to analyze taxi fare data and develop a model that can predict fare amounts accurately, with a specific focus on providing actionable insights for tourists visiting New York City.
 
-## Introduction
+## Timeline
+6 months: November 2022 - April 2023
 
-In the bustling streets of New York City, where every minute counts and every block is a new adventure, the humble yellow taxi is more than just a mode of transportation—it's an essential part of the city's pulse. This report dives deep into NYC taxi data to provide comprehensive analysis and actionable insights that will empower tourists to make informed decisions, ensuring a smooth experience.
+## Project Structure
 
-## Preprocessing
+- **notebooks/**
+  - `processing_1.ipynb`: **Data Preprocessing and Standardization Pipeline**  
+    This notebook handles the initial data preprocessing steps for taxi trip data, including schema standardization and merging multiple datasets into a consistent format for further analysis.
+  
+  - `processing_2.ipynb`: **Data Cleaning and Feature Engineering**  
+    This notebook focuses on cleaning the data by handling missing values, removing outliers, and performing feature engineering to create new variables for analysis.
+  
+  - `processing_3.ipynb`: **Spatial Data Integration and Feature Engineering**  
+    This notebook integrates geographic data with taxi trip data, identifies key zones like airports and tourist attractions, and creates features based on spatial information.
+  
+  - `processing_4.ipynb`: **Weather Data Integration and Duplicate Removal**  
+    This notebook merges weather data with taxi trip data, cleans the combined dataset, and removes duplicates to ensure a clean and enriched dataset for analysis.
+  
+  - `eda_postcleaning.ipynb`: **Exploratory Data Analysis and Visualization**  
+    This notebook performs exploratory data analysis (EDA) on the cleaned dataset, visualizing correlations, distributions, temporal patterns, and geospatial data to uncover key insights.
+  
+  - `transformation.ipynb`: **Log Transformation and Data Preparation**  
+    This notebook applies log transformations to skewed features to normalize their distributions and prepares the data for modeling.
+  
+  - `linear_model.ipynb`: **Linear and Lasso Regression Model Development**  
+    This notebook develops and evaluates Linear and Lasso regression models to predict taxi fares, with a focus on feature selection, residuals analysis, and model refinement.
+  
+  - `tree_model.ipynb`: **Random Forest and Gradient Boosting Model Development**  
+    This notebook builds and evaluates Random Forest and Gradient Boosting models for taxi fare prediction, analyzing model performance, residuals, and feature importance.
 
-### Descriptive Statistics and Outlier Analysis
+- **plots/**
+  - This directory contains all the plots generated during the EDA and modeling phases.
 
-- **Trip Distance**: Initial data showed a mean trip distance of about 4.47 miles. Trips under 0.2 miles and over 75 miles were considered outliers.
-- **Fare Amount**: Mean fare was $8.62, with outliers including negative fares and a maximum of $5901.74.
-- **Passenger Count**: Average count was 1.38, with outliers from 0 to 9 passengers.
+- **report/**
+  - This directory contains the LaTeX files for the final report.
 
-### Data Cleaning
+- **scripts/**
+  - Contains any Python scripts used in the data preprocessing and analysis pipeline.
 
-- Missing data was handled by removing rows with missing values, resulting in the loss of about 500,000 entries.
-- Outliers and invalid values were removed to ensure realistic and reliable data.
+## Requirements
+Ensure you have all necessary Python packages installed by using the `requirements.txt` file provided in the root directory.
 
-### Data Transformation
+## Running the Project
 
-- Numerical features were standardized using the `StandardScaler`.
-- Right-skewed numeric features like trip duration and distance were log-transformed.
+To replicate the analysis and run the models, please follow the steps below in the order specified:
 
-### Feature Engineering
+1. **Data Preprocessing**:
+   - Open and run the following notebooks sequentially:
+     1. `processing_1.ipynb`
+     2. `processing_2.ipynb`
+     3. `processing_3.ipynb`
+     4. `processing_4.ipynb`
+   - These notebooks will handle all the necessary data preprocessing steps including cleaning, outlier removal, and feature engineering.
 
-- **Temporal Features**: Extracted features like trip duration, pickup/dropoff hours, and day of the week.
-- **Geospatial Features**: Identified if trips started or ended at key locations like airports.
-- **Environmental Features**: Integrated weather data to analyze its influence on taxi trips.
+2. **Exploratory Data Analysis (EDA)**:
+   - After preprocessing, proceed with the exploratory data analysis:
+     - `eda_postcleaning.ipynb`
+   - This notebook will help you understand the cleaned dataset through various visualizations.
 
-## Analysis and Geospatial Visualisation
+3. **Data Transformation**:
+   - Next, transform the data to prepare it for modeling:
+     - `transformation.ipynb`
+   - This includes scaling and applying transformations to ensure the data is suitable for the machine learning models.
 
-### Geospatial Analysis
-
-- **Average Fare Amount by Drop-off Location**: Higher fares are concentrated in specific areas, such as southern Staten Island.
-- **Trip Density by Pickup Location**: High concentrations in central Manhattan and JFK Airport.
-- **Peak Pickup Hours by Location**: Varies by location, with business districts peaking from 3 PM to midnight.
-
-### Temporal Analysis
-
-- **Average Trip Duration by Hour of Day**: Peaks between 4 PM and 6 PM, coinciding with rush hours.
-- **Trip Density and Fare Amount by Time of Day and Day of the Week**: Higher fares observed during early morning hours on Mondays and Tuesdays.
-
-## Modelling
-
-### Performance Metrics
-
-The models were evaluated using metrics like RMSE, MAE, and R².
-
-| Model                  | RMSE | MAE  | R²  |
-|------------------------|------|------|-----|
-| Linear Regression      | 7.46 | 3.82 | 0.78|
-| Lasso Regression       | 7.58 | 3.94 | 0.77|
-| Random Forest Regressor| 7.97 | 4.65 | 0.78|
-| Gradient Boosted Trees | 3.96 | 1.88 | 0.94|
-
-### Feature Analysis
-
-- **Gradient Boosted Trees (GBT)** showed the best performance, being particularly reliable for predicting taxi fares due to its ability to handle complex interactions between features.
-
-## Recommendations
-
-1. **Plan for Higher Fares During Early Morning Airport Transfers**: Expect higher fares from 4 AM to 7 AM on weekdays.
-2. **Avoid High-Density Times on Friday and Saturday Evenings**: Consider alternative transport from 5 PM to 8 PM.
-3. **Utilize Off-Peak Times for Cheaper Rides and Leisure Activities**: Mid-morning hours and early afternoons on weekdays offer lower fares and less congestion.
-
-## Conclusion
-
-This report provides valuable insights into NYC taxi data, helping tourists make informed decisions and optimize their travel experiences. Through data preprocessing and analysis, we identified key factors affecting fares and trip durations, supported by robust modelling to predict fares accurately.
-
-## References
-
-- National Oceanic and Atmospheric Administration (NOAA), "Climate Data Online". Available at: [NOAA Climate Data](https://www.weather.gov/wrh/Climate?wfo=okx)
-- Scikit-learn, "Scikit-learn: Machine Learning in Python". Available at: [Scikit-learn Documentation](https://scikit-learn.org/stable/documentation.html)
-- New York City Taxi and Limousine Commission, "NYC Taxi and Limousine Service Trip Record Data". Available at: [NYC Taxi Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+4. **Modeling**:
+   - Run the following notebooks to build and evaluate predictive models:
+     - `linear_model.ipynb`: Implements Linear and Lasso Regression models.
+     - `tree_model.ipynb`: Implements Random Forest and Gradient Boosted Trees models.
