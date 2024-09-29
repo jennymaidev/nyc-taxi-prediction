@@ -1,6 +1,4 @@
-# MAST30034 Project 1
-- Name: Jenny Mai
-- Student ID: 1538060
+# NYC Iconic Yellow Taxi Cost Estimation for Travellers
 
 ## Project Overview
 This project focuses on analyzing the New York City Yellow Taxi data to generate insights and recommendations specifically for tourists. The analysis includes preprocessing, exploratory data analysis (EDA), and the application of machine learning models to predict taxi fares. The models used in this project include Linear Regression, Lasso Regression, Random Forest, and Gradient Boosted Trees.
