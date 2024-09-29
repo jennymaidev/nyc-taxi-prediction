@@ -1,4 +1,4 @@
-# NYC Taxi Research Project
+# NYC Iconic Yellow Taxi Cost Estimation for Travellers
 
 ## Navigating NYC: Taxi Fare Insights & Travel Tips for Tourists
 
