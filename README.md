@@ -2,7 +2,7 @@
 
 ## Navigating NYC: Taxi Fare Insights & Travel Tips for Tourists
 
-**Author**: Jenny Mai (mtqn0310@gmail.com)
+**Author**: Jenny Mai (jennymaidev@gmail.com)
 
 ## Introduction
 
